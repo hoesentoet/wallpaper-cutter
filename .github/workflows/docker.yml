@@ -28,12 +28,3 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}:${{ github.ref_name }}
             ghcr.io/${{ github.repository }}:latest
-
-      - name: Create GitHub Release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ github.ref_name }}
-          name: ${{ github.ref_name }}
-          body: |
-            Docker image built and available at:
-            - ghcr.io/${{ github.repository }}:${{ github.ref_name }}
