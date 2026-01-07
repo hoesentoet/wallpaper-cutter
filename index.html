@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Multi-Monitor Wallpaper Slicer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+  <div id="loader" class="hidden">
+    <div class="spinner"></div>
+    <div id="loaderText">Lade…</div>
+  </div>
+
+  <h1>Multi-Monitor Wallpaper Slicer</h1>
+
+  <div class="controls">
+    <label>
+      Bild laden:
+      <input type="file" id="imageInput" accept="image/*" />
+    </label>
+
+    <label>
+      Monitor-JSON laden:
+      <input type="file" id="jsonInput" accept=".json" />
+    </label>
+
+    <button id="resetView">View zurücksetzen</button>
+    <button id="renderBtn">Render & Download</button>
+  </div>
+
+  <p style="opacity:.7">🖱️ Mausrad = Zoom · Ziehen = Monitorgruppe verschieben</p>
+
+  <div id="canvasWrapper">
+    <canvas id="previewCanvas"></canvas>
+  </div>
+  <div id="monitorInfo"></div>
+
+  <div id="downloads"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

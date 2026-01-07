@@ -1,0 +1,80 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 20px;
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #444;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#canvasWrapper {
+  border: 1px solid #444;
+  display: inline-block;
+  background: #000;
+}
+
+canvas {
+  cursor: grab;
+}
+
+canvas:active {
+  cursor: grabbing;
+}
+
+#monitorInfo {
+  margin-top: 15px;
+  font-family: monospace;
+}
+
+.warn {
+  color: #ff6666;
+}
+
+.ok {
+  color: #66ff99;
+}
+
+#downloads img {
+  margin: 10px;
+  border: 1px solid #444;
+}
