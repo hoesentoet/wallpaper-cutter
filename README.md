@@ -1,7 +1,9 @@
 ![Logo](logo.png)
 
 <p align="center">
+	<a href="https://ghcr.io/hoesentoet/wallpaper-cutter">
 	<img src="https://img.shields.io/badge/docker-ghcr.io%2Fhoesentoet%2Fwallpaper--cutter-blue?logo=docker" alt="Docker Image">
+	</a>
 	<img src="https://img.shields.io/github/v/release/hoesentoet/wallpaper-cutter?label=version" alt="Docker Image Version">
 	<img src="https://img.shields.io/github/license/hoesentoet/wallpaper-cutter?label=license" alt="License">
 	<img src="https://img.shields.io/badge/status-stable-success" alt="Status">
