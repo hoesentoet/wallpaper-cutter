@@ -4,8 +4,14 @@ A lightweight, browser-based tool to **slice ultra‑wide or high‑resolution w
 
 The application is completely client‑side (no backend processing) and can be run locally, via Docker, or deployed on any server with ease.
 
----
 
+![Docker Image](https://img.shields.io/badge/docker-ghcr.io%2Fhoesentoet%2Fwallpaper--cutter-blue?logo=docker)
+![Docker Image Version](https://img.shields.io/github/v/release/hoesentoet/wallpaper-cutter?label=version)
+![License](https://img.shields.io/github/license/hoesentoet/wallpaper-cutter)
+![Status](https://img.shields.io/badge/status-stable-success)
+![Build](https://img.shields.io/github/actions/workflow/status/hoesentoet/wallpaper-cutter/docker.yml)
+
+---
 ## ✨ Features
 
 * Visual preview of monitor layout over the original image
@@ -175,11 +181,15 @@ http://localhost:8080
 
 ## 📄 License
 
-MIT License — feel free to use, modify, and distribute.
+MIT License
 
 ---
 
 ## ❤️ Credits
+
+I vibe-coded this entire thing on the side because I needed a quick solution for my wallpapers. Turns out, it's far from perfect but it gets the job done pretty well, so I decided to make it available to the public.
+
+Feel free to use, modify, and contribute.
 
 Built for people who care about **pixel‑perfect multi‑monitor wallpapers**.
 
