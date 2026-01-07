@@ -1,13 +1,9 @@
-name: Build & Publish Docker Image
+name: Build & Release Docker Image
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  packages: write
+    tags:
+      - 'v*.*.*'  # Trigger only on version tags like v1.0.0
 
 jobs:
   docker:
@@ -30,4 +26,14 @@ jobs:
           context: .
           push: true
           tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref_name }}
             ghcr.io/${{ github.repository }}:latest
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: |
+            Docker image built and available at:
+            - ghcr.io/${{ github.repository }}:${{ github.ref_name }}
