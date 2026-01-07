@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <title>Multi-Monitor Wallpaper Slicer</title>
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 
 <body>
+  <!-- Loader -->
   <div id="loader" class="hidden">
     <div class="spinner"></div>
-    <div id="loaderText">Lade…</div>
+    <div id="loaderText">Loading…</div>
   </div>
 
-  <h1>Multi-Monitor Wallpaper Slicer</h1>
+  <main class="app">
+    <header>
+      <h1>Multi-Monitor Wallpaper Slicer</h1>
+      <p class="subtitle">
+        Precisely slice ultra-wide wallpapers based on real monitor dimensions.
+      </p>
+    </header>
 
-  <div class="controls">
-    <label>
-      Bild laden:
-      <input type="file" id="imageInput" accept="image/*" />
-    </label>
+    <section class="controls">
+      <label class="file-input">
+        <span>Load image</span>
+        <input type="file" id="imageInput" accept="image/*" />
+      </label>
 
-    <label>
-      Monitor-JSON laden:
-      <input type="file" id="jsonInput" accept=".json" />
-    </label>
+      <label class="file-input">
+        <span>Load monitor layout (JSON)</span>
+        <input type="file" id="jsonInput" accept=".json" />
+      </label>
 
-    <button id="resetView">View zurücksetzen</button>
-    <button id="renderBtn">Render & Download</button>
-  </div>
+      <div class="buttons">
+        <button id="resetView" class="btn secondary">
+          Reset view
+        </button>
 
-  <p style="opacity:.7">🖱️ Mausrad = Zoom · Ziehen = Monitorgruppe verschieben</p>
+        <button id="renderBtn" class="btn primary">
+          Render & Download ZIP
+        </button>
+      </div>
+    </section>
 
-  <div id="canvasWrapper">
-    <canvas id="previewCanvas"></canvas>
-  </div>
-  <div id="monitorInfo"></div>
+    <p class="hint">
+      🖱 Scroll = scale monitors · <kbd>Ctrl</kbd> + Scroll = fine scale · 🖱 Drag = move monitor group
+    </p>
 
-  <div id="downloads"></div>
+    <section id="canvasWrapper">
+      <canvas id="previewCanvas"></canvas>
+    </section>
+
+    <section id="monitorInfo"></section>
+  </main>
 
   <script src="script.js"></script>
 </body>

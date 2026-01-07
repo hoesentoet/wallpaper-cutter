@@ -268,7 +268,7 @@ function updateMonitorInfo() {
 
     div.textContent =
       `${m.name}: ` +
-      `Quelle ${effectiveWidth}×${effectiveHeight}px → ` +
+      `Selection ${effectiveWidth}×${effectiveHeight}px → ` +
       `Monitor ${m.px[0]}×${m.px[1]}px ` +
       (ok ? "✓" : "⚠️");
 

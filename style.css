@@ -1,59 +1,143 @@
+/* ---------- Base ---------- */
+
+:root {
+  --bg: #0f1115;
+  --panel: #161a22;
+  --text: #e6e8ee;
+  --muted: #9aa4b2;
+  --border: #2a2f3a;
+
+  --accent: #4f8cff;
+  --accent-hover: #6ea0ff;
+
+  --ok: #4cd98b;
+  --warn: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: system-ui, sans-serif;
-  background: #111;
-  color: #eee;
-  margin: 20px;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-#loader {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+/* ---------- App Layout ---------- */
+
+.app {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 24px 28px 40px;
 }
 
-.flex {
-  display: flex;
-}
-
-.hidden {
-  display: none;
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid #444;
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+header {
+  margin-bottom: 24px;
 }
 
 h1 {
-  margin-bottom: 10px;
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Controls ---------- */
 
 .controls {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px 20px;
+  align-items: end;
+  margin-bottom: 14px;
 }
 
+.file-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.file-input input {
+  color: var(--text);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #1d2230, #141826);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(180deg, #23283a, #191e2e);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent), #3a6fe0);
+  border-color: #3a6fe0;
+}
+
+.btn.primary:hover {
+  background: linear-gradient(180deg, var(--accent-hover), #4b7fff);
+}
+
+.btn.secondary {
+  opacity: 0.9;
+}
+
+/* ---------- Hint ---------- */
+
+.hint {
+  margin: 10px 0 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+kbd {
+  background: #1c2232;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
+
+/* ---------- Canvas ---------- */
+
 #canvasWrapper {
-  border: 1px solid #444;
-  display: inline-block;
+  border: 1px solid var(--border);
   background: #000;
+  border-radius: 10px;
+  padding: 6px;
 }
 
 canvas {
+  width: 100%;
+  display: block;
   cursor: grab;
 }
 
@@ -61,20 +145,64 @@ canvas:active {
   cursor: grabbing;
 }
 
+/* ---------- Monitor Info ---------- */
+
 #monitorInfo {
-  margin-top: 15px;
-  font-family: monospace;
+  margin-top: 16px;
+  display: grid;
+  gap: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
 }
 
-.warn {
-  color: #ff6666;
+#monitorInfo div {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--panel);
+  border: 1px solid var(--border);
 }
 
 .ok {
-  color: #66ff99;
+  color: var(--ok);
 }
 
-#downloads img {
-  margin: 10px;
-  border: 1px solid #444;
+.warn {
+  color: var(--warn);
+}
+
+/* ---------- Loader ---------- */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.75);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 5px solid #2a2f3a;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
