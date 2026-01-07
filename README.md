@@ -1,15 +1,18 @@
+![Logo](logo.png)
+
+<p align="center">
+	<img src="https://img.shields.io/badge/docker-ghcr.io%2Fhoesentoet%2Fwallpaper--cutter-blue?logo=docker" alt="Docker Image">
+	<img src="https://img.shields.io/github/v/release/hoesentoet/wallpaper-cutter?label=version" alt="Docker Image Version">
+	<img src="https://img.shields.io/github/license/hoesentoet/wallpaper-cutter?label=license" alt="License">
+	<img src="https://img.shields.io/badge/status-stable-success" alt="Status">
+	<img src="https://img.shields.io/github/actions/workflow/status/hoesentoet/wallpaper-cutter/docker.yml" alt="Build">
+</p>
+
 # Multi-Monitor Wallpaper Cutter
 
 A lightweight, browser-based tool to **slice ultra‑wide or high‑resolution wallpapers** into perfectly aligned per‑monitor images.
 
 The application is completely client‑side (no backend processing) and can be run locally, via Docker, or deployed on any server with ease.
-
-
-![Docker Image](https://img.shields.io/badge/docker-ghcr.io%2Fhoesentoet%2Fwallpaper--cutter-blue?logo=docker)
-![Docker Image Version](https://img.shields.io/github/v/release/hoesentoet/wallpaper-cutter?label=version)
-![License](https://img.shields.io/github/license/hoesentoet/wallpaper-cutter)
-![Status](https://img.shields.io/badge/status-stable-success)
-![Build](https://img.shields.io/github/actions/workflow/status/hoesentoet/wallpaper-cutter/docker.yml)
 
 ---
 ## ✨ Features
